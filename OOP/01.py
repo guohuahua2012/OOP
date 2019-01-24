@@ -15,8 +15,9 @@ mingyue = Student()
 
 
 # 在定义一个类，用来描述听python的学生
-class PythonStudent():
+class PythonStudent(): # class关键字 + PythonStudent() 类名单词首字母大写 + 冒号：
     # 用None 给不确定的值赋值
+    # 定义变量的属性名及赋值
     name = None
     age = 18
     course = "Python"
@@ -35,6 +36,80 @@ yueyue = PythonStudent()
 
 print(yueyue.name)
 print(yueyue.age)
-
+print(yueyue.course)
 # 注意成员函数的调用没有传递进入参数
 yueyue.doHomework()
+
+# 打印查看Python类内所有的成员
+print(PythonStudent.__dict__)
+
+import random
+print(random.randint(0,9999999999999999999))
+
+
+
+# 定义一个类
+class A():
+    # 定义属性
+    name = "chunhua"
+    age = 18
+
+    def say(self):
+        self.name = "guochunhua"
+        self.age = 30
+# 此案例说明
+'''
+类实例的属性（A.name）和其对象实例的属性（a.name），如果不进行对象的实例属性赋值（a.name！= "xxx"）,
+则两者指向的为同一个变量(id值不变)
+'''
+
+# 此时，A称为类的实例
+print(A.name)
+print(A.age)
+
+print("-" * 30)
+
+# id 可以鉴别一个变量与另外一个变量 是否为同一个变量
+print(id(A.name))
+print(id(A.age))
+
+print("-" * 30)
+# 定义一个对象
+a = A()
+# 此时，a称为对象的实例，借用了A()类实例的属性
+print(a.name)
+print(a.age)
+print(id(a.name))
+print(id(a.age))
+
+'''
+类实例的属性（A.name）和其对象实例的属性（a.name），如果对对象的实例属性进行赋值（a.name = "xxx"）,
+则两者指向的内容不是同一个变量了（id值已变化）
+'''
+# 此时，A称为类的实例
+print("*" * 30)
+print(A.name)
+print(A.age)
+
+print("-" * 30)
+
+# id 可以鉴别一个变量与另外一个变量 是否为同一个变量
+print(id(A.name))
+print(id(A.age))
+# 查看A内所有的属性值
+print(A.__dict__)
+print(a.__dict__)
+
+print("分隔符----" * 10)
+# 定义一个对象
+a = A()
+# 进行对象实例赋值
+a.name = "huihui" # 等价于 self.name = "huihui"
+a.age = 20        # 等价于 self.age = 20
+# 打印查看对象实例赋值后，对象实例的成员
+print(a.__dict__)
+
+print(a.name)
+print(a.age)
+print(id(a.name))
+print(id(a.age))

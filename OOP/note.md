@@ -56,3 +56,23 @@
 - conda list :显示anaconda 安装的包
 - conda env list :显示anaconda的虚拟环境列表
 - conda create -n xxx python=3.6:创建版本为3.6的虚拟环境，名称为xxx
+
+# 4 类和对象的成员分析
+- 类和对象都可以存储成员，成员可以归类所有，也可以归对象所有
+    - 例子：
+        # 定义A类
+        - class A():
+            name = "chunhua"
+            age = 18
+        # A类实例只有一份 存储两个成员 name 和 age
+        - a = A()
+        # 成员归类所有
+        print(A.name) ---> "chunhua"
+        print(A.age) ---> 18
+        
+        # 对象实可以有多个（b.name、c.age...） 每一个对象同样享有A类中的成员 name 和 age
+        print(a.name) ---> "chunhua"
+        print(a.age) ---> 18
+- 创建对象的时候，类中的成员不会自动放入对象当中，而是得到一个空对象，没有成员，使用时可以借用类的属性
+- 通过对象，对类中成员重新赋值 或者 通过对象添加成员时，新赋值或新添加的成员会保存在对象中，而不会修改类成员
+
