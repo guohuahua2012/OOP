@@ -113,3 +113,45 @@ print(a.name)
 print(a.age)
 print(id(a.name))
 print(id(a.age))
+
+
+# self 使用
+print("this is self ------------------------")
+class StudentA():
+    name = "chunhua"
+    age = 18
+
+    def my_info(self):
+        self.name = "huahua"
+        self.age = 200
+        print("My name is {0}".format(self.name))
+        print("My age is {0}".format(self.age))
+
+my = StudentA()
+# 对象my把自己作为参数传入函数my_info()中
+# 即self.name 等价于 my.name ; self.age 等价于 my.age
+my.my_info()
+
+
+# 有self 与 没有self的区别
+print("有self 与 没有self的区别示例")
+class Teacher():
+    name = "laoshi"
+    age = 20
+
+    # 定义一个非绑定类的方法
+    def he_self(self):
+        self.name = "liudana"
+        self.age = 30
+        print("My name is {0}".format(self.name))
+        print("My age is {0}".format(self.age))
+    # 定义一个绑定类的方法
+    def he_he():
+        print("他说他是python老司机...")
+
+ta = Teacher()
+# 调用非绑定类函数使用对象名
+ta.he_self()
+
+# 调用绑定类函数使用类名
+Teacher.he_he()
