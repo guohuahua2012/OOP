@@ -151,7 +151,9 @@ class Teacher():
 
 ta = Teacher()
 # 调用非绑定类函数使用对象名
+# 对象ta会作为参数传入函数中
 ta.he_self()
 
 # 调用绑定类函数使用类名
+# 此时类名不会作为参数传入函数中
 Teacher.he_he()
