@@ -40,13 +40,8 @@ print(yueyue.course)
 # 注意成员函数的调用没有传递进入参数
 yueyue.doHomework()
 
-# 打印查看Python类内所有的成员
+# 打印查看PythonStudent类内所有的成员
 print(PythonStudent.__dict__)
-
-import random
-print(random.randint(0,9999999999999999999))
-
-
 
 # 定义一个类
 class A():
@@ -157,3 +152,16 @@ ta.he_self()
 # 调用绑定类函数使用类名
 # 此时类名不会作为参数传入函数中
 Teacher.he_he()
+
+# 私有变量案例
+class Person():
+    name = "Guochunhua"
+    __age = 30
+
+p = Person()
+# name是共有变量
+print(p.name)
+print(Person.__dict__)
+# __age 是私有变量
+#可以使用对象._classname__attributename访问
+print(p._Person__age)
